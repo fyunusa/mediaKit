@@ -1,101 +1,92 @@
-import Image from "next/image";
+import Link from "next/link";
+
+const tools = [
+  {
+    href: "/favicon-generator",
+    icon: "🖼️",
+    title: "Favicon Generator",
+    description:
+      "Upload any image → get all standard favicon sizes (16px–512px) + ready-to-paste <link> tags, bundled in a .zip.",
+    tags: ["Canvas API", "JSZip"],
+  },
+  {
+    href: "/og-image-generator",
+    icon: "📸",
+    title: "OG Image Generator",
+    description:
+      "Type title + subtitle, pick a visual theme → live 1200×630 canvas preview → download as og-image.png.",
+    tags: ["Canvas API", "5 themes"],
+  },
+  {
+    href: "/youtube-thumbnail",
+    icon: "🎬",
+    title: "YouTube Thumbnail Extractor",
+    description:
+      "Paste any YouTube URL (youtu.be, Shorts, embed) → preview and download all available thumbnail sizes.",
+    tags: ["No API key", "JSZip"],
+  },
+  {
+    href: "/audio-trimmer",
+    icon: "✂️",
+    title: "Audio Trimmer",
+    description:
+      "Upload MP3/WAV → waveform renders in-browser → drag handles to trim → download the cut clip. No server.",
+    tags: ["WaveSurfer.js", "FFmpeg WASM"],
+  },
+  {
+    href: "/font-pairing",
+    icon: "🔤",
+    title: "Font Pairing Suggester",
+    description:
+      "Pick one Google Font → get 3 curated complementary pairings with live preview and copy-paste CSS.",
+    tags: ["Google Fonts", "50+ fonts"],
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="text-center mb-16">
+        <div className="inline-flex items-center gap-2 bg-sky-500/10 border border-sky-500/20 rounded-full px-4 py-1.5 text-sky-400 text-sm mb-6">
+          <span>⚡</span> 100% in-browser · No uploads · No accounts
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <h1 className="text-4xl sm:text-6xl font-bold text-white mb-4 tracking-tight">
+          Free Media &amp; Creative Tools
+        </h1>
+        <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          A fast, privacy-first collection of utilities that run entirely in your browser.
+          Pick a tool and get to work instantly.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {tools.map((tool) => (
+          <Link
+            key={tool.href}
+            href={tool.href}
+            className="group relative bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-sky-500/50 hover:bg-gray-800/50 transition-all duration-200"
+          >
+            <div className="text-3xl mb-3">{tool.icon}</div>
+            <h2 className="text-lg font-semibold text-white mb-2 group-hover:text-sky-400 transition-colors">
+              {tool.title}
+            </h2>
+            <p className="text-sm text-gray-400 mb-4 leading-relaxed">{tool.description}</p>
+            <div className="flex flex-wrap gap-2">
+              {tool.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="text-xs bg-gray-800 border border-gray-700 text-gray-400 rounded-full px-2.5 py-0.5"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <span className="absolute top-4 right-4 text-gray-600 group-hover:text-sky-400 transition-colors text-lg">
+              →
+            </span>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
