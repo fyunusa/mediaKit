@@ -3,9 +3,12 @@ import Link from "next/link";
 const tools = [
   { href: "/favicon-generator", label: "Favicon Generator" },
   { href: "/og-image-generator", label: "OG Image" },
-  { href: "/youtube-thumbnail", label: "YT Thumbnail" },
+  { href: "/youtube-thumbnail", label: "Thumbnails" },
   { href: "/audio-trimmer", label: "Audio Trimmer" },
-  { href: "/font-pairing", label: "Font Pairing" },
+  { href: "/font-studio", label: "Font Studio" },
+  { href: "/app-icon-generator", label: "App Icons" },
+  { href: "/splash-screen-generator", label: "Splash Screens" },
+  { href: "/pwa-asset-generator", label: "PWA Assets" },
 ];
 
 export default function Navbar() {

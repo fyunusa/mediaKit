@@ -20,10 +20,10 @@ const tools = [
   {
     href: "/youtube-thumbnail",
     icon: "🎬",
-    title: "YouTube Thumbnail Extractor",
+    title: "Thumbnail Extractor",
     description:
-      "Paste any YouTube URL (youtu.be, Shorts, embed) → preview and download all available thumbnail sizes.",
-    tags: ["No API key", "JSZip"],
+      "Paste a YouTube URL to grab all thumbnail sizes, or upload any local video to capture frames at any timestamp.",
+    tags: ["YouTube", "Local video", "Canvas API"],
   },
   {
     href: "/audio-trimmer",
@@ -34,12 +34,36 @@ const tools = [
     tags: ["WaveSurfer.js", "FFmpeg WASM"],
   },
   {
-    href: "/font-pairing",
+    href: "/font-studio",
     icon: "🔤",
-    title: "Font Pairing Suggester",
+    title: "Font Studio",
     description:
-      "Pick one Google Font → get 3 curated complementary pairings with live preview and copy-paste CSS.",
-    tags: ["Google Fonts", "50+ fonts"],
+      "Test any Google Font live with full controls, discover fonts by mood & category, and get curated pairings — 65+ fonts.",
+    tags: ["Google Fonts", "65+ fonts", "3 modes"],
+  },
+  {
+    href: "/app-icon-generator",
+    icon: "📱",
+    title: "App Icon Generator",
+    description:
+      "Upload one image → generate every iOS and Android app icon size (from 20px to 1024px) as a .zip.",
+    tags: ["iOS", "Android", "Canvas API"],
+  },
+  {
+    href: "/splash-screen-generator",
+    icon: "🌅",
+    title: "Splash Screen Generator",
+    description:
+      "Set a background color, upload an optional logo → get every iOS + Android splash screen density as a .zip.",
+    tags: ["iOS", "Android", "Color picker"],
+  },
+  {
+    href: "/pwa-asset-generator",
+    icon: "⚙️",
+    title: "PWA Asset Generator",
+    description:
+      "Generate all PWA icon sizes, maskable icons (safe-zone background), and a ready-to-use manifest.json.",
+    tags: ["Maskable icons", "manifest.json"],
   },
 ];
 
@@ -48,7 +72,7 @@ export default function Home() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-2 bg-sky-500/10 border border-sky-500/20 rounded-full px-4 py-1.5 text-sky-400 text-sm mb-6">
-          <span>⚡</span> 100% in-browser · No uploads · No accounts
+          <span>⚡</span> 100% in-browser · No uploads · No accounts · 9 tools
         </div>
         <h1 className="text-4xl sm:text-6xl font-bold text-white mb-4 tracking-tight">
           Free Media &amp; Creative Tools

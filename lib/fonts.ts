@@ -101,3 +101,105 @@ export function googleFontsUrl(fonts: string[]): string {
     .join("&");
   return `https://fonts.googleapis.com/css2?${families}&display=swap`;
 }
+
+// ── Font Studio catalog ───────────────────────────────────────────────────────
+
+export type FontCategory =
+  | "sans-serif"
+  | "serif"
+  | "display"
+  | "monospace"
+  | "handwriting";
+
+export type FontMood =
+  | "elegant"
+  | "playful"
+  | "minimal"
+  | "bold"
+  | "technical"
+  | "warm"
+  | "editorial"
+  | "modern"
+  | "retro"
+  | "condensed";
+
+export interface FontMeta {
+  name: string;
+  category: FontCategory;
+  moods: FontMood[];
+  weights: number[];
+}
+
+export const FONT_CATALOG: FontMeta[] = [
+  // ── Sans-serif ──
+  { name: "Inter",            category: "sans-serif", moods: ["minimal","modern","technical"],    weights: [100,200,300,400,500,600,700,800,900] },
+  { name: "Roboto",           category: "sans-serif", moods: ["minimal","modern","warm"],         weights: [100,300,400,500,700,900] },
+  { name: "Open Sans",        category: "sans-serif", moods: ["minimal","warm","modern"],         weights: [300,400,500,600,700,800] },
+  { name: "Poppins",          category: "sans-serif", moods: ["modern","playful","bold"],         weights: [100,200,300,400,500,600,700,800,900] },
+  { name: "Montserrat",       category: "sans-serif", moods: ["bold","modern","elegant"],         weights: [100,200,300,400,500,600,700,800,900] },
+  { name: "Nunito",           category: "sans-serif", moods: ["playful","warm","modern"],         weights: [200,300,400,500,600,700,800,900] },
+  { name: "Raleway",          category: "sans-serif", moods: ["elegant","minimal","modern"],      weights: [100,200,300,400,500,600,700,800,900] },
+  { name: "Lato",             category: "sans-serif", moods: ["minimal","warm","modern"],         weights: [100,300,400,700,900] },
+  { name: "DM Sans",          category: "sans-serif", moods: ["minimal","modern"],                weights: [100,200,300,400,500,600,700,800,900] },
+  { name: "Fira Sans",        category: "sans-serif", moods: ["technical","modern","minimal"],    weights: [100,200,300,400,500,600,700,800,900] },
+  { name: "Ubuntu",           category: "sans-serif", moods: ["modern","warm","technical"],       weights: [300,400,500,700] },
+  { name: "Josefin Sans",     category: "sans-serif", moods: ["elegant","minimal","retro"],       weights: [100,200,300,400,500,600,700] },
+  { name: "Oswald",           category: "sans-serif", moods: ["bold","condensed","modern"],       weights: [200,300,400,500,600,700] },
+  { name: "Rubik",            category: "sans-serif", moods: ["modern","playful","warm"],         weights: [300,400,500,600,700,800,900] },
+  { name: "Work Sans",        category: "sans-serif", moods: ["minimal","modern"],                weights: [100,200,300,400,500,600,700,800,900] },
+  { name: "Manrope",          category: "sans-serif", moods: ["modern","minimal","elegant"],      weights: [200,300,400,500,600,700,800] },
+  { name: "Plus Jakarta Sans",category: "sans-serif", moods: ["modern","minimal"],                weights: [200,300,400,500,600,700,800] },
+  { name: "Barlow",           category: "sans-serif", moods: ["minimal","modern","bold"],         weights: [100,200,300,400,500,600,700,800,900] },
+  { name: "Cabin",            category: "sans-serif", moods: ["warm","modern","minimal"],         weights: [400,500,600,700] },
+  { name: "Quicksand",        category: "sans-serif", moods: ["playful","warm","modern"],         weights: [300,400,500,600,700] },
+  { name: "Exo 2",            category: "sans-serif", moods: ["technical","modern","bold"],       weights: [100,200,300,400,500,600,700,800,900] },
+  { name: "Mulish",           category: "sans-serif", moods: ["minimal","modern"],                weights: [200,300,400,500,600,700,800,900] },
+  { name: "Outfit",           category: "sans-serif", moods: ["modern","minimal","playful"],      weights: [100,200,300,400,500,600,700,800,900] },
+  { name: "Space Grotesk",    category: "sans-serif", moods: ["modern","technical","bold"],       weights: [300,400,500,600,700] },
+  { name: "Sora",             category: "sans-serif", moods: ["modern","minimal"],                weights: [100,200,300,400,500,600,700,800] },
+  // ── Serif ──
+  { name: "Playfair Display", category: "serif", moods: ["elegant","editorial","bold"],           weights: [400,500,600,700,800,900] },
+  { name: "Merriweather",     category: "serif", moods: ["warm","editorial","modern"],            weights: [300,400,700,900] },
+  { name: "Lora",             category: "serif", moods: ["warm","editorial","elegant"],           weights: [400,500,600,700] },
+  { name: "EB Garamond",      category: "serif", moods: ["elegant","editorial","retro"],          weights: [400,500,600,700,800] },
+  { name: "Cormorant Garamond",category: "serif", moods: ["elegant","editorial"],                 weights: [300,400,500,600,700] },
+  { name: "Libre Baskerville",category: "serif", moods: ["editorial","warm"],                    weights: [400,700] },
+  { name: "Source Serif Pro", category: "serif", moods: ["editorial","modern","minimal"],         weights: [200,300,400,600,700,900] },
+  { name: "DM Serif Display", category: "serif", moods: ["elegant","editorial","bold"],           weights: [400] },
+  { name: "PT Serif",         category: "serif", moods: ["editorial","warm","modern"],            weights: [400,700] },
+  { name: "Crimson Text",     category: "serif", moods: ["editorial","warm","retro"],             weights: [400,600,700] },
+  { name: "Spectral",         category: "serif", moods: ["editorial","elegant"],                  weights: [200,300,400,500,600,700,800] },
+  { name: "Libre Caslon Text",category: "serif", moods: ["editorial","warm"],                    weights: [400,700] },
+  // ── Display ──
+  { name: "Bebas Neue",       category: "display", moods: ["bold","condensed","modern"],         weights: [400] },
+  { name: "Anton",            category: "display", moods: ["bold","condensed"],                  weights: [400] },
+  { name: "Righteous",        category: "display", moods: ["bold","retro","playful"],             weights: [400] },
+  { name: "Abril Fatface",    category: "display", moods: ["bold","editorial","retro"],           weights: [400] },
+  { name: "Lobster",          category: "display", moods: ["retro","playful","bold"],             weights: [400] },
+  { name: "Fredoka One",      category: "display", moods: ["playful","warm","bold"],              weights: [400] },
+  { name: "Comfortaa",        category: "display", moods: ["playful","warm","modern"],            weights: [300,400,500,600,700] },
+  { name: "Pacifico",         category: "display", moods: ["retro","playful","warm"],             weights: [400] },
+  { name: "Alfa Slab One",    category: "display", moods: ["bold","retro"],                      weights: [400] },
+  { name: "Boogaloo",         category: "display", moods: ["playful","retro"],                   weights: [400] },
+  { name: "Titan One",        category: "display", moods: ["bold","playful"],                    weights: [400] },
+  { name: "Passion One",      category: "display", moods: ["bold","condensed","modern"],         weights: [400,700,900] },
+  // ── Monospace ──
+  { name: "JetBrains Mono",   category: "monospace", moods: ["technical","modern","minimal"],    weights: [100,200,300,400,500,600,700,800] },
+  { name: "Fira Code",        category: "monospace", moods: ["technical","modern"],              weights: [300,400,500,600,700] },
+  { name: "Source Code Pro",  category: "monospace", moods: ["technical","minimal"],             weights: [200,300,400,500,600,700,800,900] },
+  { name: "Space Mono",       category: "monospace", moods: ["technical","retro","bold"],        weights: [400,700] },
+  { name: "Inconsolata",      category: "monospace", moods: ["technical","minimal"],             weights: [200,300,400,500,600,700,800,900] },
+  { name: "Roboto Mono",      category: "monospace", moods: ["technical","modern"],              weights: [100,200,300,400,500,600,700] },
+  { name: "IBM Plex Mono",    category: "monospace", moods: ["technical","modern","minimal"],    weights: [100,200,300,400,500,600,700] },
+  { name: "Courier Prime",    category: "monospace", moods: ["technical","retro","editorial"],   weights: [400,700] },
+  // ── Handwriting ──
+  { name: "Dancing Script",   category: "handwriting", moods: ["elegant","playful","warm"],      weights: [400,500,600,700] },
+  { name: "Caveat",           category: "handwriting", moods: ["playful","warm"],                weights: [400,500,600,700] },
+  { name: "Satisfy",          category: "handwriting", moods: ["elegant","retro"],               weights: [400] },
+  { name: "Great Vibes",      category: "handwriting", moods: ["elegant","warm"],                weights: [400] },
+  { name: "Kalam",            category: "handwriting", moods: ["warm","playful"],                weights: [300,400,700] },
+  { name: "Patrick Hand",     category: "handwriting", moods: ["playful","warm"],                weights: [400] },
+  { name: "Indie Flower",     category: "handwriting", moods: ["playful","warm"],                weights: [400] },
+  { name: "Sacramento",       category: "handwriting", moods: ["elegant","warm"],                weights: [400] },
+  { name: "Permanent Marker", category: "handwriting", moods: ["bold","playful"],                weights: [400] },
+];

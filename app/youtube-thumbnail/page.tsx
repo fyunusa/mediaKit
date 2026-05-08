@@ -1,8 +1,8 @@
 import YoutubeThumbnail from "@/components/tools/YoutubeThumbnail";
 
 export const metadata = {
-  title: "YouTube Thumbnail Extractor — MediaKit",
-  description: "Paste any YouTube URL and download all available thumbnail sizes.",
+  title: "Thumbnail Extractor — MediaKit",
+  description: "Extract YouTube thumbnails from a URL, or capture frames from any local video file.",
 };
 
 export default function Page() {

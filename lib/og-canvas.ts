@@ -114,11 +114,27 @@ export function drawOGImage(canvas: HTMLCanvasElement, options: OGOptions) {
   ctx.fillText(line.trim(), 100, y);
   y += 100;
 
-  // Subtitle
+  // Subtitle — word-wrapped
   if (subtitle) {
     ctx.fillStyle = theme === "light-clean" || theme === "magazine" ? "#6b7280" : "rgba(255,255,255,0.65)";
     ctx.font = `32px ${theme === "magazine" ? "Georgia, serif" : "Arial, sans-serif"}`;
-    ctx.fillText(subtitle.slice(0, 80), 100, y);
+    const subWords = subtitle.split(" ");
+    let subLine = "";
+    const subMaxWidth = 1000;
+    const subLineHeight = 44;
+    for (const word of subWords) {
+      const test = subLine + word + " ";
+      if (ctx.measureText(test).width > subMaxWidth && subLine !== "") {
+        if (y + subLineHeight > 560) break; // stop before overflowing into author area
+        ctx.fillText(subLine.trim(), 100, y);
+        subLine = word + " ";
+        y += subLineHeight;
+      } else {
+        subLine = test;
+      }
+    }
+    if (y + subLineHeight <= 560) ctx.fillText(subLine.trim(), 100, y);
+    y += subLineHeight;
   }
 
   // Author / site name
